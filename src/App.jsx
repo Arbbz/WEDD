@@ -6,6 +6,7 @@ import RSVPForm from './components/RSVPForm';
 import StorySection from './components/Story';
 import CoverPage from './components/CoverPage';
 import CoupleBio from './components/CoupleBio';
+import LiveCommentCard from './components/LiveComment';
 import './App.css';
 
 const PlayIcon = () => (
@@ -120,7 +121,8 @@ const App = () => {
             <CoupleBio />
             <StorySection />
             <EventDetails />
-            {/* <RSVPForm /> */}
+            <RSVPForm />
+            <LiveCommentCard />
             <WeddingGift copyToClipboard={copyToClipboard} />
           </main>
           <Footer />

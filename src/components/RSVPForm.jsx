@@ -1,5 +1,22 @@
 import React, { useState } from 'react';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCSe5IT7EAXzlvPW3B60_ZCAMLwaS5KqzY",
+  authDomain: "live-comment-d217e.firebaseapp.com",
+  projectId: "live-comment-d217e",
+  storageBucket: "live-comment-d217e.appspot.com",
+  messagingSenderId: "533677732830",
+  appId: "1:533677732830:web:81121f19fa3c721a23e34f",
+  measurementId: "G-1DKNJJJFEF",
+    databaseURL: "https://live-comment-d217e-default-rtdb.firebaseio.com/"  // database URL
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
 const MailOpenIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail-open">
@@ -14,22 +31,28 @@ const RSVPForm = () => {
   const [attend, setAttend] = useState('yes');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulasi pengiriman data
-    setTimeout(() => {
-      console.log({ name, attend, message });
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setName('');
-      setAttend('yes');
-      setMessage('');
-    }, 2000);
+    const rsvpData = { name, attend, message };
+
+    push(ref(database, 'rsvp/'), rsvpData)
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setName('');
+        setAttend('yes');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error("Error saving data:", error);
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+      });
   };
 
   return (
@@ -71,6 +94,11 @@ const RSVPForm = () => {
       {submitStatus === 'success' && (
         <div className="mt-4 p-3 text-sm text-maroon-500 bg-gold-50 rounded-xl text-center">
           Terima kasih, konfirmasi Anda telah kami terima!
+        </div>
+      )}
+      {submitStatus === 'error' && (
+        <div className="mt-4 p-3 text-sm text-red-500 bg-red-100 rounded-xl text-center">
+          Ada kesalahan saat mengirimkan konfirmasi Anda. Silakan coba lagi.
         </div>
       )}
     </section>

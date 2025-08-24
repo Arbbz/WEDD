@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-maroon-800 text-center p-4">
       <p className="text-sm text-gold-100 font-light">
-        Dibuat dengan cinta. © 2025.
+        Dibuat dengan Arbaa. © 2025.
       </p>
     </footer>
   );
