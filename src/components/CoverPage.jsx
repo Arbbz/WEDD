@@ -5,15 +5,21 @@ const CoverPage = ({ openInvitation }) => {
     <div
       className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-90 z-50 animate-fade-in-up"
       style={{
-        backgroundImage: "url('https://images.pexels.com/photos/220067/pexels-photo-220067.jpeg')", 
+        backgroundImage: "url('bg2.jpg')", 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+      <div 
+      className="absolute inset-0 bg-black opacity-50" // Dark overlay for readability
+      style={{
+        zIndex: -1,  // Ensure the overlay is behind the text
+      }}
+    ></div>
       <div className="text-center text-white p-8 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-        <p className="font-light mb-4 font-playfair">The Wedding of</p>
-        <h1 className="text-5xl md:text-6xl font-great-vibes font-bold mb-2">Debby & Ihsan</h1>
-        <p className="font-light mb-8 text-sm">Minggu, 15 Desember 2024</p>
+        <p className="font-light mb-4 font-playfair text-2xl">The Wedding of</p>
+        <h1 className="text-8xl font-great-vibes font-bold mb-2 header-content">Debby & Ihsan</h1>
+        <p className="font-light mb-8 text-xl">Sabtu, 6 September 2025</p>
         <p className="font-light mb-6">Kpd Bpk/Ibu/Saudara/i</p>
 
         <button

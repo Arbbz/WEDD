@@ -51,33 +51,6 @@ const RSVPForm = () => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Apakah Anda akan hadir?</label>
-          <div className="flex items-center space-x-4">
-            <label className="inline-flex items-center">
-              <input
-                type="radio"
-                name="attend"
-                value="yes"
-                checked={attend === 'yes'}
-                onChange={(e) => setAttend(e.target.value)}
-                className="form-radio text-maroon-600 "
-              />
-              <span className="ml-2 text-gray-700">Ya, saya akan datang</span>
-            </label>
-            <label className="inline-flex items-center">
-              <input
-                type="radio"
-                name="attend"
-                value="no"
-                checked={attend === 'no'}
-                onChange={(e) => setAttend(e.target.value)}
-                className="form-radio text-maroon-600"
-              />
-              <span className="ml-2 text-gray-700">Maaf, saya tidak bisa</span>
-            </label>
-          </div>
-        </div>
-        <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Pesan & Doa (opsional)</label>
           <textarea
             id="message"

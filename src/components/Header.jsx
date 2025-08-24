@@ -17,7 +17,7 @@ const Header = () => {
           Debby & Ihsan
         </h1>
         <p className="mt-20 mb-20 text-sm sm:text-base md:text-lg font-light tracking-wide animate-fade-in-up header-tagline">
-          Minggu, 24 Januari 2024
+          Sabtu, 6 September 2025
         </p>
       </div>
     </header>

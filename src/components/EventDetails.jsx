@@ -1,4 +1,3 @@
-
 import React from 'react';
 const CalendarIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calendar">
@@ -15,6 +14,7 @@ const MapPinIcon = () => (
     <circle cx="12" cy="10" r="3"></circle>
   </svg>
 );
+
 const EventDetails = () => {
   const details = [
     {
@@ -46,6 +46,31 @@ const EventDetails = () => {
             <p className="text-sm text-maroon-500 mt-1">{detail.location}</p>
           </div>
         ))}
+
+        {/* Peta Google (Link hanya satu) */}
+        <div className="mt-8">
+          <h4 className="text-xl text-maroon-500 mb-4 text-center">Lokasi Acara</h4>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.4738474251844!2d110.1273805!3d-6.9398123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e704325b016da2d%3A0xb42a07a2576a18aa!2sJl.%20Flamboyan%2C%20Truko%2C%20Kec.%20Kangkung%2C%20Kabupaten%20Kendal%2C%20Jawa%20Tengah%2051353!5e0!3m2!1sid!2sid!4v1692917410745!5m2!1sid!2sid" 
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          />
+
+
+          <div className="mt-4 text-center">
+            <a
+              href="https://www.google.com/maps/place/Jl.+Flamboyan,+Truko,+Kec.+Kangkung,+Kabupaten+Kendal,+Jawa+Tengah+51353/@-6.939807,110.1248056,17z/data=!3m1!4b1!4m6!3m5!1s0x2e704325b016da2d:0xb42a07a2576a18aa!8m2!3d-6.9398123!4d110.1273805!16s%2Fg%2F11cm_hzql7?authuser=2&entry=tts&g_ep=EgoyMDI1MDgwMy4wIPu8ASoASAFQAw%3D%3D&skid=1b7a272e-314f-4401-b762-8bcb21dcf983" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-maroon-600 hover:text-maroon-800 underline"
+            >
+              Lihat Lokasi di Google Maps
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

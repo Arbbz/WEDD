@@ -1,11 +1,130 @@
 .header-content {
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Tangerine', cursive;
 }
 
 .name-content {
   font-family: 'Monsieur La Doulaise', cursive;
 }
+.bismillah {
+  font-family: 'Dancing Script', cursive;
+}
 
 .header-tagline {
   font-family: 'Meow Script', cursive;
+}
+
+        .bg-maroon-900 { background-color: #3b0e14; }
+        .bg-maroon-800 { background-color: #5d1720; }
+        .bg-maroon-700 { background-color: #7f212c; }
+        .bg-maroon-600 { background-color: #a12a38; }
+        .bg-maroon-500 { background-color: #c33444; }
+        .bg-maroon-100 { background-color: #f1d8db; }
+        .text-maroon-600 { color: #a12a38; }
+        .text-maroon-500 { color: #c33444; }
+        .text-maroon-100 { color: #f1d8db; }
+
+        .bg-gold-50 { background-color: #fffaf0; }
+        .text-gold-300 { color: #e5b35c; }
+        .text-gold-500 { color: #d4a017; }
+        .text-gold-700 { color: #a5883d; }
+        .text-gold-800 { color: #735d18; }
+        .border-gold-500 { border-color: #d4a017; }
+        .focus-ring-gold-500:focus { --tw-ring-color: #d4a017; }
+        .focus-border-gold-500:focus { border-color: #d4a017; }
+        .hover-bg-gold-700:hover { background-color: #a5883d; }
+
+        /* Keyframes untuk animasi */
+        @keyframes fadeInScale {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+          from { transform: scale(0.5); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes pulseSlow {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+
+        /* Kelas utilitas untuk animasi */
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-down {
+          animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .animate-scale-in {
+          animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-pulse-slow {
+          animation: pulseSlow 3s infinite;
+        }
+
+        /* Penundaan animasi untuk setiap elemen */
+        .header-content { animation-delay: 0.5s; }
+        .header-name { animation-delay: 0.8s; }
+        .header-tagline { animation-delay: 1.2s; }
+        .event-details-section { animation-delay: 1.5s; }
+        .rsvp-form-section { animation-delay: 1.8s; }
+
+        /* Keyframes untuk animasi bergerak dari kiri */
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes untuk animasi bergerak dari kanan */
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Kelas utilitas untuk animasi */
+.animate-fade-in-from-left {
+  animation: fadeInFromLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-from-right {
+  animation: fadeInFromRight 0.8s ease-out forwards;
+}
+
+/* Penundaan animasi untuk setiap elemen */
+.header-content {
+  animation-delay: 1s;
+}
+
+.name-content {
+  animation-delay: 1s;
+}
+
+.event-details-section {
+  animation-delay: 1.5s;
 }
